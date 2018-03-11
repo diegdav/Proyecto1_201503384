@@ -23,35 +23,35 @@ public class PantallaPrincipal extends JFrame {
 
     boolean mostrar;
     PanelPantallaPrincipal panelPantallaPrincipal;
-    
+
     public PantallaPrincipal() {
         setTitle("IPC PROYECTO 1");
         setSize(1000, 700);
         setLocationRelativeTo(null);
         panelPantallaPrincipal = new PanelPantallaPrincipal();
     }
-    
-    public void mostrarPantallaPrincipal (boolean mostrar) {
+
+    public void mostrarPantallaPrincipal(boolean mostrar) {
         if (mostrar == false) {
-            
+
         } else {
             add(panelPantallaPrincipal);
             panelPantallaPrincipal.setVisible(true);
         }
     }
-    
+
     public void mostrarPantallaLogin(boolean mostrar) {
         PantallaLogin pantallaLogin = new PantallaLogin();
-        
+
         if (mostrar == true) {
             pantallaLogin.setVisible(mostrar);
         } else {
             pantallaLogin.setVisible(false);
         }
     }
-    
+
     public void mostrarPantallaUsuarioAdmin(boolean mostrar) {
-        
+
     }
 }
 
@@ -69,7 +69,7 @@ class PanelPantallaPrincipal extends JPanel {
     public PanelPantallaPrincipal() {
         setLayout(null);
         setBackground(Color.gray);
-        
+
         ActionListener login = new Login();
 
         panelInicio = new JPanel();
@@ -80,7 +80,7 @@ class PanelPantallaPrincipal extends JPanel {
         btn_login = new JButton("Login");
         btn_login.setBounds(645, 25, 80, 35);
         btn_login.addActionListener(login);
-        
+
         btn_logout = new JButton("Logout");
         btn_logout.setBounds(760, 25, 80, 35);
 
@@ -120,12 +120,12 @@ class PanelPantallaPrincipal extends JPanel {
 
         add(btn_about);
     }
-    
+
     private class Login implements ActionListener {
-        
+
         @Override
         public void actionPerformed(ActionEvent e) {
             new PantallaPrincipal().mostrarPantallaLogin(true);
-            this.        }
+        }
     }
 }
